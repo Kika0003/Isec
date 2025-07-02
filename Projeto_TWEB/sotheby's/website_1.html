@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contas</title>
+
+
+<style>
+.investimento {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+#form-id {
+  width: 300px;
+  height: fit-content;
+  border: solid 2px coral;
+  padding: 20px;
+  display: none;
+}
+#form-id span {
+  padding: 10px;
+  font-size: 15px;
+  display: block;
+  text-align: left;
+  font-size: 17px;
+}
+
+#tipologia {
+  padding: 5px;
+  width: 100px;
+}
+
+input[type=number]{
+  padding: 5px;
+  width: 100px;
+  font-size: 11px;
+}
+
+input[type=checkbox]{
+  padding: 5px;
+}
+
+.bt {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#calc{
+  border: solid 1px #111111;
+    border-radius: 2px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+    display: block;
+    background-color: white;   
+    cursor: pointer;
+    text-align: center;
+    height: fit-content;
+}
+
+#calc:hover {
+  border: solid 1px white;
+ color: white;
+ background-color: black;
+ border-radius: 2px;
+}
+.resultado{
+width: 550px;
+display: none;
+gap: 20px;
+flex-wrap: wrap;
+justify-content: center;
+padding: 40px;
+
+}
+
+#zonas1, #zonas2, #zonas3{
+text-align: center;
+width: 150px;
+font-size: 13px;
+border: 1px solid #dddcdc;
+border-radius: 4px;
+display: none;
+padding-bottom: 40px;
+}
+
+h2 {
+  color: #999;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+#calc_zona1, #calc_zona2, #calc_zona3{
+  color: black;
+  padding-bottom: 50px;
+}
+
+#options1, #options2, #options3{
+  display: none;
+}
+
+#text{
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  
+}
+.estudo{
+  font-size: 18px;
+  color: #111111;
+  line-height: 22px;
+  padding-bottom: 20px;
+}
+.hands{
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  box-shadow: 5px 10px 18px #dddcdc;
+  border-radius: 4px;
+}
+.voltar{
+  border: solid 1px #111111;
+    border-radius: 2px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+    display: none;
+    background-color: white;   
+    cursor: pointer;
+    text-align: center;
+    height: fit-content;
+}
+
+.voltar:hover {
+  border: solid 1px white;
+ color: white;
+ background-color: black;
+ border-radius: 2px;
+}
+
+.financiamento{
+  border: solid 1px #111111;
+    border-radius: 2px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+    display: none;
+    background-color: white;   
+    cursor: pointer;
+    text-align: center;
+    height: fit-content;
+}
+
+.financiamento:hover {
+border: solid 1px white;
+ color: white;
+ background-color: black;
+ border-radius: 2px;
+}
+.banco{
+width:100%;
+display: flex;
+gap: 20px;
+justify-content: center;
+padding: 20px;
+}
+
+#banco1, #banco2, #banco3{
+text-align: left;
+width: 200px;
+font-size: 13px;
+border: 1px solid #dddcdc;
+border-radius: 4px;
+display: none;
+padding: 20px;
+}
+
+</style>
+
+</head>
+<body>
+  <div class="investimento">
+    <div id="text">
+      <p class="estudo">Obtenha o seu estudo de mercado!</p>
+      <img class="hands" src="sotheby's/hands.png">
+    </div>
+
+
+  <form id="form-id">
+    <span>Tipologia:
+    <select id="tipologia">
+        <option value="0">T0</option>
+        <option value="1">T1</option>
+        <option value="2">T2</option>
+        <option value="3">T3</option>
+        <option value="4">T4</option>
+    </select></span>
+    <span>Área Útil: <input id="area" type="number" placeholder="m²"></span>
+    <span>Idade do Imóvel: <input id="idade" type="number" placeholder="Idade" min="0"></span>
+    <span>Garagem: <input type="checkbox" id="garagem"></span>
+    <span>Próximidade de Transportes Públicos:<input type="checkbox" id="transportes"></span>
+    
+    <div class="bt">
+      <a id="calc">Continuar</a> 
+    </div>
+    </form>
+
+    <div class="resultado" id="re">
+      <div id="zonas1">
+        <p id="calc_zona1"></p>
+        <p id="options1"></p>
+      </div>
+
+      <div id="zonas2">
+          <p id="calc_zona2"></p>
+          <p id="options2"></p>
+      </div> 
+
+      <div id="zonas3">
+          <p id="calc_zona3"></p>
+          <p id="options3"></p>
+      </div>   
+    <div class="voltar">
+      <a id="voltar">Voltar</a> 
+    </div>
+    <div class="financiamento">
+      <a id="financiamento">Financiamento</a> 
+    </div>
+  </div>
+  </div> 
+  <div class="banco">
+    <div id="banco1">
+      <p id="info1"></p>
+      <p id="financiamento1"></p>
+    </div>
+
+    <div id="banco2">
+      <p id="info2"></p>
+      <p id="financiamento2"></p>
+    </div>
+
+    <div id="banco3">
+      <p id="info3"></p>
+      <p id="financiamento3"></p>
+    </div>
+  </div>
+  
+  
+        <script>
+
+document.getElementById('voltar').addEventListener('click',voltar);
+function voltar(){
+  document.getElementById("form-id").style.display = "block";
+  document.getElementById("zonas1").style.display = "none";
+  document.getElementById("zonas2").style.display = "none";
+  document.getElementById("zonas3").style.display = "none";
+  document.querySelector('.voltar').style.display ="none";
+  document.querySelector('.financiamento').style.display ="none";
+  document.getElementById("re").style.display = "none";
+  document.getElementById("banco1").style.display = "none";
+document.getElementById("banco2").style.display = "none";
+document.getElementById("banco3").style.display = "none";
+
+  
+} 
+
+document.getElementById('text').addEventListener('click',showform);
+function showform(){
+  document.getElementById("form-id").style.display = "block";
+  document.getElementById('text').style.display = "none";
+  
+}          
+
+document.querySelector('.bt').addEventListener('click',showresult);
+function showresult(){
+  document.getElementById("zonas1").style.display = "inline-block";
+  document.getElementById("zonas2").style.display = "inline-block";
+  document.getElementById("zonas3").style.display = "inline-block";
+  document.getElementById("re").style.display = "flex";
+  document.getElementById("form-id").style.display = "none";
+  document.querySelector(".voltar").style.display ="block";
+  document.querySelector(".financiamento").style.display ="block";
+}
+
+document.getElementById("zonas1").addEventListener('mouseover',options1);
+function options1(){
+  document.getElementById('options1').style.display = "block";
+}
+
+document.getElementById("zonas1").addEventListener('mouseout',options1out);
+function options1out(){
+  document.getElementById('options1').style.display = "none";
+}
+
+document.getElementById("zonas2").addEventListener('mouseover',options2);
+function options2(){
+  document.getElementById('options2').style.display = "block";
+}
+
+document.getElementById("zonas2").addEventListener('mouseout',options2out);
+function options2out(){
+  document.getElementById('options2').style.display = "none";
+}
+
+document.getElementById("zonas3").addEventListener('mouseover',options3);
+function options3(){
+  document.getElementById('options3').style.display = "block";
+}
+
+document.getElementById("zonas3").addEventListener('mouseout',options3out);
+function options3out(){
+  document.getElementById('options3').style.display = "none";
+}
+
+
+          var form = document.getElementById("form-id");
+          form.addEventListener('submit', function (event) {
+              event.preventDefault();
+          });
+
+            var calc_zona1 = 0;
+            var calc_zona2 = 0;
+            var calc_zona3 = 0;
+
+          document.getElementById("calc").addEventListener("click", function () {
+          
+              var tipologia = document.getElementById("tipologia").value;
+              var area_util = parseInt(document.getElementById("area").value);
+              var idade_imovel = parseInt(document.getElementById("idade").value);
+              var tergaragem = document.getElementById("garagem").checked;
+              var proxTP = document.getElementById("transportes").checked;
+              
+          
+              var c1;
+              var c2;
+              var c3;
+          
+              var preco_zona1 = 1200;
+              var preco_zona2 = 2000;
+              var preco_zona3 = 2500;
+          
+          
+              if (idade_imovel > 0 && idade_imovel <= 5){c1 = 1;}
+              else if(idade_imovel > 5 && idade_imovel <= 10){c1 = 0.95;}
+              else if(idade_imovel > 10){c1 = 0.9;}
+          
+              if (tergaragem == true){c2 = 1;}
+              else{c2 = 0.95;}
+          
+              if (proxTP == true){c3 = 1;}
+              else{c3 = 0.9;}
+          
+              calc_zona1 = area_util * preco_zona1 * c1 * c2 * c3;
+              calc_zona2 = area_util * preco_zona2 * c1 * c2 * c3;
+              calc_zona3 = area_util * preco_zona3 * c1 * c2 * c3;
+          
+              
+
+              document.getElementById("calc_zona1").innerHTML = "<h2>Zona 1</h2>" + calc_zona1.toLocaleString() + "€";
+              document.getElementById("calc_zona2").innerHTML = "<h2>Zona 2</h2>" + calc_zona2.toLocaleString() + "€";
+              document.getElementById("calc_zona3").innerHTML = "<h2>Zona 3</h2>" + calc_zona3.toLocaleString() + "€";
+
+
+              document.getElementById("options1").innerHTML = "<p>€/m²: " + preco_zona1 + "€" + "<p>Área: " + area_util + "m²" + "<p>Tipologia: " + "T" + tipologia + "<p>Idade: " + idade_imovel + " anos";  
+              document.getElementById("options2").innerHTML = "<p>€/m²: " + preco_zona2 + "€" + "<p>Área: " + area_util + "m²" + "<p>Tipologia: " + "T" + tipologia + "<p>Idade: " + idade_imovel + " anos";
+              document.getElementById("options3").innerHTML = "<p>€/m²: " + preco_zona3 + "€" + "<p>Área: " + area_util + "m²" + "<p>Tipologia: " + "T" + tipologia + "<p>Idade: " + idade_imovel + " anos";
+              
+          });
+      
+document.getElementById("financiamento").addEventListener("click", function () {
+
+
+var spread1 = Math.floor(Math.random() * (5 * 100 - 1 * 100) + 1 * 100) / (1 * 100);
+var spread2 = Math.floor(Math.random() * (5 * 100 - 1 * 100) + 1 * 100) / (1 * 100);
+var spread3 = Math.floor(Math.random() * (5 * 100 - 1 * 100) + 1 * 100) / (1 * 100);
+var anos = 12 * Math.floor(Math.random() * (60 - 20 + 20) ) + 20;
+
+var juro1 = Math.round(0.5 + spread1);
+var juro2 = Math.round(0.5 + spread2);
+var juro3 = Math.round(0.5 + spread3);
+
+var entrada1 = Math.round(0.15 * calc_zona1);
+var entrada2 = 0.15 * calc_zona2;   
+var entrada3 = 0.15 * calc_zona3;
+
+var emprestimo1 = calc_zona1 - entrada1;
+var emprestimo2 = calc_zona2 - entrada2;          
+var emprestimo3 = calc_zona3 - entrada3;
+
+var mensal1 = Math.round(emprestimo1 / anos * juro1 * spread1);
+var mensal2 = Math.round(emprestimo2 / anos * juro2 * spread2); 
+var mensal3 = Math.round(emprestimo3 / anos * juro3 * spread3); 
+
+document.getElementById("financiamento1").innerHTML = "<p> Prestação mensal: " + mensal1 + "€";
+document.getElementById("info1").innerHTML = "<h2>Assento</h2>" + "<p>Montante: " + calc_zona1 + "€" + "<p>Empréstimo: " + emprestimo1 + "€" + "<p>Entrada inicial: " + entrada1 + "€" + "<p>Taxa juro: " + juro1 + "%" + "<p>Spread: " + spread1 + "%" + "<p>Durante: " + anos + " meses = " + Math.round(anos/12) + " anos";
+
+document.getElementById("financiamento2").innerHTML = "<p> Prestação mensal: " + mensal2 + "€";
+document.getElementById("info2").innerHTML = "<h2>Erro 404</h2>" + "<p>Montante: " + calc_zona2 + "€" + "<p>Empréstimo: " + emprestimo2 + "€" + "<p>Entrada inicial: " + entrada2 + "€" + "<p>Taxa juro: " + juro2 + "%" + "<p>Spread: " + spread2 + "%" + "<p>Durante: " + anos + " meses = " + Math.round(anos/12) + " anos";
+
+document.getElementById("financiamento3").innerHTML = "<p> Prestação mensal: " + mensal3 + "€";
+document.getElementById("info3").innerHTML = "<h2>Illuminati</h2>" + "<p>Montante: " + calc_zona3 + "€" + "<p>Empréstimo: " + emprestimo3 + "€" + "<p>Entrada inicial: " + entrada3 + "€" + "<p>Taxa juro: " + juro3 + "%" + "<p>Spread: " + spread3 + "%" + "<p>Durante: " + anos + " meses = " + Math.round(anos/12) + " anos";
+
+document.getElementById("banco1").style.display = "block";
+document.getElementById("banco2").style.display = "block";
+document.getElementById("banco3").style.display = "block";    
+
+});
+
+          </script>
+
+</body>
+</html>
