@@ -1,0 +1,3 @@
+/Users/Carolina/Documents/UNI/2º ano/IIA/tp2/hipotese/Trepa Colinas/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Carolina/Documents/UNI/2º ano/IIA/tp2/hipotese/Trepa Colinas/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Carolina/Documents/UNI/2º ano/IIA/tp2/hipotese/Trepa Colinas/cmake-build-debug/CMakeFiles/TrepaColinas.dir
