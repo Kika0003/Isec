@@ -1,0 +1,13 @@
+
+.game-container {
+  margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border: 4px solid;
+  border-bottom-color: #fffefe;
+  border-right-color: #fffefe;
+  border-left-color: #7b7b7b;
+  border-top-color: #7b7b7b;
+}
