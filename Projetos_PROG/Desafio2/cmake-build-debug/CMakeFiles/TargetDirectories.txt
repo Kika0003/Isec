@@ -1,0 +1,3 @@
+C:/COIMBRA/4ANO/2SEMESTRE/P/DESAFIOS/Desafio2/cmake-build-debug/CMakeFiles/Desafio2.dir
+C:/COIMBRA/4ANO/2SEMESTRE/P/DESAFIOS/Desafio2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/COIMBRA/4ANO/2SEMESTRE/P/DESAFIOS/Desafio2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
