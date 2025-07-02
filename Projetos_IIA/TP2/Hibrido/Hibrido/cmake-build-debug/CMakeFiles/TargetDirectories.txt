@@ -1,0 +1,3 @@
+C:/COIMBRA/2º ANO/1º SEMESTRE/IIA/Hibrido/Hibrido/cmake-build-debug/CMakeFiles/Hibrido.dir
+C:/COIMBRA/2º ANO/1º SEMESTRE/IIA/Hibrido/Hibrido/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/COIMBRA/2º ANO/1º SEMESTRE/IIA/Hibrido/Hibrido/cmake-build-debug/CMakeFiles/rebuild_cache.dir
