@@ -1,3 +1,0 @@
-C:/COIMBRA/2º ANO/1º SEMESTRE/IIA/Evolutivo/Evolutivo/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/COIMBRA/2º ANO/1º SEMESTRE/IIA/Evolutivo/Evolutivo/cmake-build-debug/CMakeFiles/Evolutivo.dir
-C:/COIMBRA/2º ANO/1º SEMESTRE/IIA/Evolutivo/Evolutivo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
